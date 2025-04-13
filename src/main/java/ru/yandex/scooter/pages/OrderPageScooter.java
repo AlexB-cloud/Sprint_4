@@ -9,7 +9,7 @@ public class OrderPageScooter {
   private By firstName= By.xpath(".//input[@placeholder='* Имя']");
   private By lastName= By.xpath(".//input[@placeholder='* Фамилия']");
   private By address= By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
-  private By metro= By.xpath(".//input[@placeholder='* Станция метро']");
+  private By subway = By.xpath(".//input[@placeholder='* Станция метро']");
   private By metroSelect=By.xpath(".//div[contains(@class,'select-search has-focus')]//button[contains(@class,'select-search__option')]");
   private By phoneNumber= By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
   private By whenToDeliver= By.xpath(".//input[@placeholder='* Когда привезти самокат']");
@@ -26,11 +26,11 @@ public class OrderPageScooter {
   public OrderPageScooter(WebDriver driver){
     this.driver=driver;
   }
-  public boolean placeOrder(String firstName, String lastName, String address, String metro, String phoneNumber, String commentForCourier) {
+  public boolean placeOrder(String firstName, String lastName, String address, String subway, String phoneNumber, String commentForCourier) {
     driver.findElement(this.firstName).sendKeys(firstName);
     driver.findElement(this.lastName).sendKeys(lastName);
     driver.findElement(this.address).sendKeys(address);
-    driver.findElement(this.metro).sendKeys(metro);
+    driver.findElement(this.subway).sendKeys(subway);
     driver.findElement(this.metroSelect).click();
     System.out.println(driver.getPageSource());
     driver.findElement(this.phoneNumber).sendKeys(phoneNumber);

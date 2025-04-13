@@ -11,15 +11,15 @@ public class scooterOrderTest extends GeneralTest {
 private String firstName;
 private String lastName;
 private String address;
-private String metro;
+private String subway;
 private String phoneNumber;
 private String commentForCourier;
 
-  public scooterOrderTest(String firstName, String lastName, String address, String metro, String phoneNumber, String commentForCourier){
+  public scooterOrderTest(String firstName, String lastName, String address, String subway, String phoneNumber, String commentForCourier){
     this.firstName=firstName;
     this.lastName=lastName;
     this.address=address;
-    this.metro=metro;
+    this.subway = subway;
     this.phoneNumber=phoneNumber;
     this.commentForCourier=commentForCourier;
   }
@@ -38,14 +38,14 @@ private String commentForCourier;
   public void placeOrderWithTopButton(){
     mainPage.clickTopOrderButton();
     OrderPageScooter orderPage= new OrderPageScooter(driver);
-    boolean result = orderPage.placeOrder(firstName,lastName,address,metro,phoneNumber,commentForCourier);
+    boolean result = orderPage.placeOrder(firstName,lastName,address, subway,phoneNumber,commentForCourier);
     Assert.assertTrue(result);
   }
   @Test
   public void placeOrderWithBottomButton(){
     mainPage.clickBottomOrderButton();
     OrderPageScooter orderPage= new OrderPageScooter(driver);
-    boolean result = orderPage.placeOrder(firstName,lastName,address,metro,phoneNumber,commentForCourier);
+    boolean result = orderPage.placeOrder(firstName,lastName,address, subway,phoneNumber,commentForCourier);
     Assert.assertTrue(result);
   }
 
